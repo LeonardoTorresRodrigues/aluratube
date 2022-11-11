@@ -6,7 +6,7 @@ import { StyledTimeline } from "../src/components/Timeline";
 import React from "react";
 
 function HomePage() {
-  const [valorDoFiltro, setValorDoFiltro] = React.useState("Angular");
+  const [valorDoFiltro, setValorDoFiltro] = React.useState("");
 
   return (
     <>
@@ -76,7 +76,7 @@ function Timeline({ searchValue, ...props }) {
       {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
               {videos.filter((video) => {
@@ -85,7 +85,7 @@ function Timeline({ searchValue, ...props }) {
                 return titleNormalized.includes(searchValueNormalized)
               }).map((video) => {
                 return (
-                  <a href={video.url}>
+                  <a key={video.url} href={video.url}>
                     <img src={video.thumb} alt="" />
                     <span>
                       {video.title}
