@@ -5,14 +5,15 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-  const estilosDaHomePage = {
-    // backgroundColor: "red" 
-  };
 
   return (
     <>
       <CSSReset />
-      <div style={estilosDaHomePage}>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        flex: 1
+      }}>
         <Menu />
         <Header />
         <Timeline playlists={config.playlists} />
@@ -64,7 +65,6 @@ function Timeline(props) {
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
-        console.log(videos);
         return (
           <section>
             <h2>{playlistName}</h2>
