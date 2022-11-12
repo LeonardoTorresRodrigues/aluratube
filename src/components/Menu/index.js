@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DarkModeSwitch from "../DarkModeSwitch";
+import DarkModeSwitch from "./components/DarkModeSwitch";
 import Search from "./components/Search";
 
 const StyledMenu = styled.header`
