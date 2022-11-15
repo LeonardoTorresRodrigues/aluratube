@@ -1,10 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
-import React from "react";
+import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 
 // Custom Hook
-function useForm(propsDoFrom) {
-  const [values, setValues] = React.useState(propsDoFrom.initialValues);
+function useForm(propsDoForm) {
+  const [values, setValues] = useState(propsDoForm.initialValues);
 
   return {
     values,
@@ -34,7 +34,7 @@ export default function RegisterVideo() {
   const formCadastro = useForm({
     initialValues: { titulo: "Frost Punk", url: "https://www.youtube.com/watch?v=QsqatJxAUtk" }
   });
-  const [formVisivel, setFormVisivel] = React.useState(false);
+  const [formVisivel, setFormVisivel] = useState(false);
   return (
     <StyledRegisterVideo>
       <button className="add-video" onClick={() => setFormVisivel(true)}>
@@ -52,12 +52,12 @@ export default function RegisterVideo() {
               thumb: getThumbnail(formCadastro.values.url),
               playlist: "jogos",
             })
-            .then((oqueveio) => {
-              console.log(oqueveio);
-            })
-            .catch((err) => {
-              console.log(err);
-            })
+              .then((oqueveio) => {
+                console.log(oqueveio);
+              })
+              .catch((err) => {
+                console.log(err);
+              })
 
             setFormVisivel(false);
             formCadastro.clearForm();
@@ -73,7 +73,7 @@ export default function RegisterVideo() {
                 onChange={formCadastro.handleChange}
               />
               <input
-                placeholder="URL do vídeo"
+                placeholder="URL"
                 name="url"
                 value={formCadastro.values.url}
                 onChange={formCadastro.handleChange}
