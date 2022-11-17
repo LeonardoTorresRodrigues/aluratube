@@ -67,7 +67,6 @@ export default function RegisterVideo() {
         ? (
           <form onSubmit={(evento) => {
             evento.preventDefault();
-            console.log(formCadastro.values);
 
             // Contrato entre o nosso Front e o BackEnd
             supabase.from("video").insert({

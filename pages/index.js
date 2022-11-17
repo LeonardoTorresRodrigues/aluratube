@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
@@ -7,25 +7,19 @@ import { videoService } from "../src/services/videoService";
 
 function HomePage() {
   const service = videoService();
-  const [valorDoFiltro, setValorDoFiltro] = React.useState("");
-  const [playlists, setPlaylists] = React.useState({});     // config.playlists
+  const [valorDoFiltro, setValorDoFiltro] = useState("");
+  const [playlists, setPlaylists] = useState({});     // config.playlists
 
-  React.useEffect(() => {
-    console.log("useEffect");
-    service
-      .getAllVideos()
+  useEffect(() => {
+    service.getAllVideos()
       .then((dados) => {
-        console.log(dados.data);
-        // Forma imutavel
-        const novasPlaylists = {};
+        const novasPlaylists = { ...playlists };
         dados.data.forEach((video) => {
-          if (!novasPlaylists[video.playlist]) novasPlaylists[video.playlist] = [];
-          novasPlaylists[video.playlist] = [
-            video,
-            ...novasPlaylists[video.playlist],
-          ];
+          if (!novasPlaylists[video.playlist]) {
+            novasPlaylists[video.playlist] = [];
+          }
+          novasPlaylists[video.playlist].push(video);
         });
-
         setPlaylists(novasPlaylists);
       });
   }, []);
@@ -36,7 +30,6 @@ function HomePage() {
         display: "flex",
         flexDirection: "column",
         flex: 1,
-        // backgroundColor: "red",
       }}>
         {/* Prop Drilling */}
         <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
