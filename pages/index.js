@@ -8,18 +8,34 @@ import { videoService } from "../src/services/videoService";
 function HomePage() {
   const service = videoService();
   const [valorDoFiltro, setValorDoFiltro] = useState("");
-  const [playlists, setPlaylists] = useState({});     // config.playlists
+  const [playlists, setPlaylists] = React.useState({});     // config.playlists
 
-  useEffect(() => {
-    service.getAllVideos()
+  // React.useEffect(() => {
+  //   service
+  //     .getAllVideos()
+  //     .then((dados) => {
+  //       const novasPlaylists = { ...playlists };
+  //       dados.data.forEach((video) => {
+  //         if (!novasPlaylists[video.playlists]) {
+  //           novasPlaylists[video.playlists] = [];
+  //         }
+  //         novasPlaylists[video.playlists].push(video);
+  //       })
+  //       setPlaylists(novasPlaylists);
+  //     });
+  // }, []);
+
+  React.useEffect(() => {
+    service
+      .getAllVideos()
       .then((dados) => {
         const novasPlaylists = { ...playlists };
         dados.data.forEach((video) => {
-          if (!novasPlaylists[video.playlist]) {
-            novasPlaylists[video.playlist] = [];
+          if (!novasPlaylists[video.playlists]) {
+            novasPlaylists[video.playlists] = [];
           }
-          novasPlaylists[video.playlist].push(video);
-        });
+          novasPlaylists[video.playlists].push(video);
+        })
         setPlaylists(novasPlaylists);
       });
   }, []);
@@ -42,23 +58,13 @@ function HomePage() {
   );
 }
 
-export default HomePage
-
-// function Menu() {
-//     return (
-//         <div>
-//             Menu
-//         </div>
-//     )
-// }
-
 
 const StyledHeader = styled.div`
     background-color: ${({ theme }) => theme.backgroundLevel1};
     img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
     }
     .user-info {
         display: flex;
@@ -66,14 +72,14 @@ const StyledHeader = styled.div`
         width: 100%;
         padding: 16px 32px;
         gap: 16px;
-    }
-`;
+      }
+      `;
 const StyledBanner = styled.div`
     background-color: blue;
     background-image: url(${({ bg }) => bg});
     /* background-image: url(${config.bg}); */
     height: 230px;
-`;
+    `;
 function Header() {
   return (
     <StyledHeader>
@@ -94,7 +100,6 @@ function Header() {
 }
 
 function Timeline({ searchValue, ...propriedades }) {
-  // console.log("Dentro do componente", propriedades.playlists);
   const playlistNames = Object.keys(propriedades.playlists);
   // Statement
   // Retorno por expressão
@@ -102,8 +107,7 @@ function Timeline({ searchValue, ...propriedades }) {
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
         const videos = propriedades.playlists[playlistName];
-        // console.log(playlistName);
-        // console.log(videos);
+
         return (
           <section key={playlistName}>
             <h2>{playlistName}</h2>
@@ -131,3 +135,4 @@ function Timeline({ searchValue, ...propriedades }) {
     </StyledTimeline>
   )
 }
+export default HomePage
