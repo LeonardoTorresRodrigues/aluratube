@@ -10,21 +10,6 @@ function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
   const [playlists, setPlaylists] = React.useState({});     // config.playlists
 
-  // React.useEffect(() => {
-  //   service
-  //     .getAllVideos()
-  //     .then((dados) => {
-  //       const novasPlaylists = { ...playlists };
-  //       dados.data.forEach((video) => {
-  //         if (!novasPlaylists[video.playlists]) {
-  //           novasPlaylists[video.playlists] = [];
-  //         }
-  //         novasPlaylists[video.playlists].push(video);
-  //       })
-  //       setPlaylists(novasPlaylists);
-  //     });
-  // }, []);
-
   React.useEffect(() => {
     service
       .getAllVideos()
