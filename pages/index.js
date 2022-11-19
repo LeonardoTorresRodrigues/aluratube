@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import config from "../config.json";
-import styled from "styled-components";
 import Menu from "../src/components/Menu";
-import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/videoService";
+import { Header } from "../src/components/Header";
+import { Timeline } from "../src/components/Timeline";
 
-function HomePage() {
+export default function HomePage() {
   const service = videoService();
   const [valorDoFiltro, setValorDoFiltro] = useState("");
-  const [playlists, setPlaylists] = React.useState({});     // config.playlists
+  const [playlists, setPlaylists] = useState({});     // config.playlists
 
-  React.useEffect(() => {
+  useEffect(() => {
     service
       .getAllVideos()
       .then((dados) => {
@@ -42,82 +42,3 @@ function HomePage() {
     </>
   );
 }
-
-
-const StyledHeader = styled.div`
-    background-color: ${({ theme }) => theme.backgroundLevel1};
-    img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-    }
-    .user-info {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 16px 32px;
-        gap: 16px;
-      }
-      `;
-const StyledBanner = styled.div`
-    background-color: blue;
-    background-image: url(${({ bg }) => bg});
-    /* background-image: url(${config.bg}); */
-    height: 230px;
-    `;
-function Header() {
-  return (
-    <StyledHeader>
-      <StyledBanner bg={config.bg} />
-      <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`} />
-        <div>
-          <h2>
-            {config.name}
-          </h2>
-          <p>
-            {config.job}
-          </p>
-        </div>
-      </section>
-    </StyledHeader>
-  )
-}
-
-function Timeline({ searchValue, ...propriedades }) {
-  const playlistNames = Object.keys(propriedades.playlists);
-  // Statement
-  // Retorno por expressão
-  return (
-    <StyledTimeline>
-      {playlistNames.map((playlistName) => {
-        const videos = propriedades.playlists[playlistName];
-
-        return (
-          <section key={playlistName}>
-            <h2>{playlistName}</h2>
-            <div>
-              {videos
-                .filter((video) => {
-                  const titleNormalized = video.title.toLowerCase();
-                  const searchValueNormalized = searchValue.toLowerCase();
-                  return titleNormalized.includes(searchValueNormalized)
-                })
-                .map((video) => {
-                  return (
-                    <a key={video.url} href={video.url}>
-                      <img src={video.thumb} />
-                      <span>
-                        {video.title}
-                      </span>
-                    </a>
-                  )
-                })}
-            </div>
-          </section>
-        )
-      })}
-    </StyledTimeline>
-  )
-}
-export default HomePage
