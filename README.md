@@ -1,9 +1,27 @@
 # AluraTube
 
-Projeto feito durante imersão react da alura
+O AluraTube é uma página clone do YouTube. Você pode adicionar seus vídeos favoritos e compartilhar com outras pessoas.
 
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **AluraTube**
+| :label: Tecnologias | JavaScript, React, Next, Styled-Components, Supabase
+| :rocket: URL         | https://aluratube-leonardotorresrodrigues.vercel.app/
+| :fire: Desafio     | https://www.alura.com.br/imersao-react
 
-## Como está o nosso projeto?
-- `_app.js`: Carrega o setup do projeto
-  - Aqui vão ficar os Providers de informação do nosso projeto.
-  - CSSReset
+<div>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Next-ffffff?style=for-the-badge&logo=nextdotjs&logoColor=000000"/>
+  <img src="https://img.shields.io/badge/styled components-3C3C3C?style=for-the-badge&logo=styled-components&logoColor=DB7093">
+  <img src="https://img.shields.io/badge/supabase-1C1C1C?style=for-the-badge&logo=supabase&logoColor=3ECF8E">
+</div>
+
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+
+## Detalhes do projeto
+
+Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+
+Esse projeto foi feito durante a Imersão React da Alura!
