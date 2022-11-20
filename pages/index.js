@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import config from "../config.json";
 import Menu from "../src/components/Menu";
 import { videoService } from "../src/services/videoService";
 import { Header } from "../src/components/Header";
@@ -8,7 +7,7 @@ import { Timeline } from "../src/components/Timeline";
 export default function HomePage() {
   const service = videoService();
   const [valorDoFiltro, setValorDoFiltro] = useState("");
-  const [playlists, setPlaylists] = useState({});     // config.playlists
+  const [playlists, setPlaylists] = useState({});
 
   useEffect(() => {
     service
