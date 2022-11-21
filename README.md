@@ -22,6 +22,15 @@ O AluraTube é uma página clone do YouTube. Você pode adicionar seus vídeos f
 
 ## Detalhes do projeto
 
-Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+Você pode adicionar seus vídeos favoritos do YouTube...
+
+### Clique no "+":
+<!-- adicionar imagem do + -->
+
+### Coloque um título e passe a url do vídeo:
+
+<!-- Inserir imagem adicionando vídeo -->
+
+Clique em cadastrar e pronto!
 
 Esse projeto foi feito durante a Imersão React da Alura!
