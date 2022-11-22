@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
@@ -34,10 +34,10 @@ function ProviderWrapper(props) {
 }
 
 function Root({ Component, pageProps }) {
-  const contexto = React.useContext(ColorModeContext);
-  // console.log(contexto.mode);
+  const context = useContext(ColorModeContext);
+  
   return (
-    <ThemeProvider theme={theme[contexto.mode]}>
+    <ThemeProvider theme={theme[context.mode]}>
       <CSSReset />
       <Component {...pageProps} />
       <RegisterVideo />
