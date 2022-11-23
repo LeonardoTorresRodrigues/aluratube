@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../src/components/Menu";
 import { videoService } from "../src/services/videoService";
 import { Header } from "../src/components/Header";

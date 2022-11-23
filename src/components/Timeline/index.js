@@ -1,12 +1,12 @@
 import { StyledTimeline } from "./styles";
 
-export function Timeline({ searchValue, ...propriedades }) {
-  const playlistNames = Object.keys(propriedades.playlists);
+export function Timeline({ searchValue, ...props }) {
+  const playlistNames = Object.keys(props.playlists);
 
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
-        const videos = propriedades.playlists[playlistName];
+        const videos = props.playlists[playlistName];
 
         return (
           <section key={playlistName}>
@@ -20,7 +20,7 @@ export function Timeline({ searchValue, ...propriedades }) {
                 })
                 .map((video) => {
                   return (
-                    <a key={video.url} href={video.url}>
+                    <a key={video.url}href={video.url}>
                       <img src={video.thumb} />
                       <span>
                         {video.title}
