@@ -24,7 +24,11 @@ O AluraTube é uma página clone do YouTube. Você pode adicionar seus vídeos f
 
 Você pode adicionar seus vídeos favoritos do YouTube...
 
-### Clique no "+":
+## Como usar
+
+Ao abrir a aplicação, algum dos meus vídeos favoritos irão aparecer. Não é necessário fazer login ou criar um cadastro, basta...
+
+### Clicar no "+":
 <!-- adicionar imagem do + -->
 
 ### Coloque um título e passe a url do vídeo:
