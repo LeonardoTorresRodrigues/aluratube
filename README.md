@@ -1,6 +1,6 @@
 # AluraTube
 
-O AluraTube é uma página clone do YouTube. Você pode adicionar seus vídeos favoritos e compartilhar com outras pessoas.
+O AluraTube é uma página em que adiciono meus vídeos favoritos do YouTube. Você pode adicionar seus vídeos favoritos e compartilhar com outras pessoas.
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
