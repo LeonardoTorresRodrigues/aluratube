@@ -1,6 +1,6 @@
 # AluraTube
 
-O AluraTube é uma página em que adiciono meus vídeos favoritos do YouTube. Você pode adicionar seus vídeos favoritos e compartilhar com outras pessoas.
+O AluraTube é uma página em que  você pode adicionar seus vídeos favoritos e compartilhar com outras pessoas.
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
@@ -16,6 +16,8 @@ O AluraTube é uma página em que adiciono meus vídeos favoritos do YouTube. Vo
   <img src="https://img.shields.io/badge/styled components-3C3C3C?style=for-the-badge&logo=styled-components&logoColor=DB7093">
   <img src="https://img.shields.io/badge/supabase-1C1C1C?style=for-the-badge&logo=supabase&logoColor=3ECF8E">
 </div>
+
+:construction: Página em desenvolvimento :construction:
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
 ![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
